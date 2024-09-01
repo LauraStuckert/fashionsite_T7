@@ -85,6 +85,12 @@ body {
   margin: 3px 0;
 }
 
+.product-brand {
+  font-size: 14px;
+  color: grey;
+  margin: 3px 0;
+}
+
 .product-price {
   font-size: 14px;
   color: black;
