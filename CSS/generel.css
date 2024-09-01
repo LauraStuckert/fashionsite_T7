@@ -100,7 +100,7 @@ body {
 
 /* Styling af udsolgt på produktliste */
 
-.product-udsolgt {
+.udsolgt {
   flex: 1 1 300px;
   text-align: center;
   margin-bottom: 20px;
@@ -122,7 +122,7 @@ body {
 
 /*Styling af rabat på produkt */
 
-.product-rabat {
+.rabat {
   flex: 1 1 300px;
   text-align: center;
   margin-bottom: 20px;

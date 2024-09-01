@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produktoversigt</title>
+    <link rel="stylesheet" href="CSS/generel.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul class="nav_menu">
+          <li class="nav_punkt"><a href="forside.html">Forside</a></li>
+          <li class="nav_punkt"><a href="kategori.html">Kategorier</a></li>
+          <li class="nav_punkt"><a href="produktliste.html">Produkter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Produkter</h1>
+      <div class="product-list">
+        <template id="productTemplate">
+          <article class="product">
+            <a href="#"><img src="" alt="" /></a>
+            <div class="product-info">
+              <p class="product-name"></p>
+              <p class="product-category"></p>
+              <p class="product-price"></p>
+              <a href="#" class="product-link">Læs mere</a>
+              <p class="sold-out-text" style="display: none">Udsolgt</p>
+            </div>
+          </article>
+        </template>
+      </div>
+    </main>
+
+    <script src="Java/produktlistechat.js"></script>
+
+    <footer></footer>
+  </body>
+</html>
