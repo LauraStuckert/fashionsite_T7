@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 1rem;
+  padding: 0;
+  color: black;
+}
+
+/* Styling af header */
+.header {
+}
+
+/* styling af navbar */
+.navbar {
+  display: flex;
+  justify-content: right; /* Placerer menuen til højre */
+  align-items: center;
+  border: 2px solid #007bff;
+}
+
+/*styling af menuen */
+.nav_menu {
+  display: flex;
+  justify-content: right; /* Justerer menupunkterne til højre */
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin-top: 1rem;
+  }
+}
+
+.nav_punkt {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.nav_punkt:hover {
+  border-bottom: black 1px solid;
+}
+
+/* Generel styling */
+
+body {
+  font-family: "Playfair Display";
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling af produktliste side */
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
+  gap: 20px; /* Mellemrum mellem produkterne */
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product {
+  text-align: center;
+}
+
+.product img {
+  width: 100%; /* Billedet fylder hele produktets bredde */
+  max-width: 250px; /* Maksimal bredde på billedet */
+  height: auto;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.product-category {
+  font-size: 14px;
+  color: grey;
+  margin: 3px 0;
+}
+
+.product-price {
+  font-size: 14px;
+  color: black;
+  margin: 3px 0;
+}
+
+.product-link {
+  font-size: 14px;
+  color: black;
+  text-decoration: underline;
+  margin: 3px 0;
+}
+
+/* Styling af udsolgt på produktliste */
+
+.product-udsolgt {
+  flex: 1 1 300px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-udsolgt img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  opacity: 0.4;
+}
+
+.sold-out-text {
+  font-size: 16px;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/*Styling af rabat på produkt */
+
+.product-rabat {
+  flex: 1 1 300px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-rabat img {
+  max-width: 100%;
+  height: auto;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: grey;
+  /* margin-right: 2px; */
+  display: block;
+  margin: 3px 0;
+}
+
+.discounted-price {
+  color: #e60000;
+  font-weight: bold;
+  display: block;
+  margin: 3px 0;
+}
+
+/* Styling af produkt side */
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  flex: 1 1 300px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-details {
+  flex: 2 1 500px;
+  padding: 0 20px;
+}
+
+.product-details h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.buy-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-family: "Playfair Display";
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling kategoriside */
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.category-box {
+  background-color: #007bff;
+  color: white;
+  padding: 40px 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.category-box:hover {
+  background-color: #0056b3;
+}
