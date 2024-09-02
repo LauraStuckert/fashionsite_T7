@@ -1,8 +1,19 @@
+const URLparams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+const url = "https://kea-alt-del.dk/t7/api/products/${id}";
+
 // https://kea-alt-del.dk/t7/api/products/1525
 
-fetch("https://kea-alt-del.dk/t7/api/products/1525")
-  .then((response) => response.json())
-  .then((data) => showProduct(data));
+// fetch("https://kea-alt-del.dk/t7/api/products/1525")
+//   .then((response) => response.json())
+//   .then((data) => showProduct(data));
+
+// Dynamisk:
+function getProduct() {
+  fetch(url)
+    .then((res) => res.json())
+    .then(showProduct);
+}
 
 // Vi har brug for at gøre noget med dataen
 
@@ -18,6 +29,7 @@ function showProduct(product) {
     product.price;
   document.querySelector("img").src =
     "https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp";
+  document.querySelector("img").alt = product.productdisplayname;
 }
 
 /* {

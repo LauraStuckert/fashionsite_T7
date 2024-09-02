@@ -50,22 +50,19 @@ body {
 
 /* Styling af produktliste side */
 
-.product-list {
+#product-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
   gap: 20px; /* Mellemrum mellem produkterne */
-  padding: 20px;
+  /* padding: 20px; */
   max-width: 1200px;
   margin: auto;
-}
-
-.product {
   text-align: center;
 }
 
 .product img {
   width: 100%; /* Billedet fylder hele produktets bredde */
-  max-width: 250px; /* Maksimal bredde på billedet */
+  max-width: auto; /* Maksimal bredde på billedet */
   height: auto;
 }
 
@@ -107,19 +104,23 @@ body {
 /* Styling af udsolgt på produktliste */
 
 .udsolgt {
-  flex: 1 1 300px;
-  text-align: center;
-  margin-bottom: 20px;
+  img {
+    opacity: 0.5;
+  }
 }
 
-.product-udsolgt img {
+.hide {
+  display: none;
+}
+
+/* .product-udsolgt img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   opacity: 0.4;
-}
+} */
 
-.sold-out-text {
+.sold_out_text {
   font-size: 16px;
   color: red;
   font-weight: bold;
