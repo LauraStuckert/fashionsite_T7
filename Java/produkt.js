@@ -1,6 +1,6 @@
 const URLparams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
-const url = "https://kea-alt-del.dk/t7/api/products/${id}";
+const id = URLparams.get("id");
+const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
 
 // https://kea-alt-del.dk/t7/api/products/1525
 
@@ -19,16 +19,11 @@ function getProduct() {
 
 function showProduct(product) {
   console.log(product);
-  document.querySelector(".product-details h1").textContent =
-    product.productdisplayname;
-  document.querySelector(".product-details .product-category").textContent =
-    product.category;
-  document.querySelector(".product-details .product-brand").textContent =
-    product.brandname;
-  document.querySelector(".product-details .product-price").textContent =
-    product.price;
-  document.querySelector("img").src =
-    "https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp";
+  document.querySelector(".product-details h1").textContent = product.productdisplayname;
+  document.querySelector(".product-details .product-category").textContent = product.category;
+  document.querySelector(".product-details .product-brand").textContent = product.brandname;
+  document.querySelector(".product-details .product-price").textContent = product.price;
+  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   document.querySelector("img").alt = product.productdisplayname;
 }
 

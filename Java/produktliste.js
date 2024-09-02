@@ -20,15 +20,32 @@ function showProduct(product) {
   //ændre indhold
   kopi.querySelector(".product-name").textContent = product.productdisplayname;
   kopi.querySelector(".product-category").textContent = product.articletype;
-  kopi.querySelector(".product-price").textContent = product.price;
+  //   kopi.querySelector(".product-price").textContent = product.price;
   kopi.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   kopi.querySelector("img").alt = product.productdisplayname;
-  kopi.querySelector("a").href = `product.html?id=${product.id}`;
+  kopi.querySelector("a").href = `produktside1.html?id=${product.id}`;
 
   if (product.soldout) {
     // produktet er udsolgt
     kopi.querySelector("article").classList.add("udsolgt");
     kopi.querySelector(".sold_out_text").classList.remove("hide");
+  }
+
+  if (product.discount) {
+    // Beregn den nedsatte pris
+    const discountedPrice = Math.round(product.price * (1 - product.discount / 100));
+
+    // Vis både den originale pris og den nedsatte pris
+    kopi.querySelector(".original-price").textContent = `DKK ${product.price},-`;
+    kopi.querySelector(".discounted-price").textContent = `DKK ${discountedPrice},-`;
+
+    // Fjern klassen, hvis rabat elementet skulle være skjult
+    kopi.querySelector(".rabat").classList.remove("hide");
+  } else {
+    // Hvis der ikke er rabat, vises kun prisen
+    kopi.querySelector(".product-price").textContent = `DKK ${product.price},-`;
+    // Skjul rabat sektionen
+    kopi.querySelector(".rabat").classList.add("hide");
   }
   //appende (tilføje produkterne til main)
   document.querySelector("#product-list").appendChild(kopi);
