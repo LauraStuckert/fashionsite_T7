@@ -1,4 +1,7 @@
-fetch("https://kea-alt-del.dk/t7/api/products")
+const URLparams = new URLSearchParams(window.location.search);
+const category = URLparams.get("category");
+
+fetch("https://kea-alt-del.dk/t7/api/products?category=" + category)
   .then((res) => res.json())
   //.then(data=>showProducts(data)) => dette er en anden måde at skrive nedenstående kode på
   .then(showProducts);

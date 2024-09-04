@@ -3,13 +3,13 @@ const URLparams = new URLSearchParams(window.location.search);
 const id = URLparams.get("id");
 
 // API-URL med det valgte produkt-ID
-const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
+// const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
 
 // Dynamisk:
 function getProduct() {
-  fetch(url)
+  fetch("https://kea-alt-del.dk/t7/api/products/" + id)
     .then((res) => res.json())
-    .then(showProduct);
+    .then((data) => showProduct(data));
 }
 
 // Vi har brug for at gøre noget med dataen
