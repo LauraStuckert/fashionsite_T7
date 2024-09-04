@@ -25,16 +25,42 @@
     <main>
       <div class="product-container">
         <div class="product-image">
-          <img src="Images/bukser.webp" alt="Træningsbukser" />
+          <img src="" alt="Produkt billede" />
         </div>
-        <div class="product-details">
-          <h1></h1>
-          <p class="product-category"></p>
-          <p class="product-brand"></p>
-          <p class="product-price"></p>
-          <p class="product-description"></p>
+        <div class="purchaseBox">
+          <p class="product-name">Produkt navn</p>
+          <p class="product-brand">Brand navn</p>
+          <p class="product-category">Kategori</p>
+          <p class="product-price">Pris</p>
+          <form>
+            <label
+              >Vælg størrelse
+              <select name="size">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
+            </label>
+          </form>
           <button class="buy-button">Køb</button>
           <a href="produktliste.html" class="product-link">Se alle produkter</a>
+        </div>
+
+        <div class="product-details">
+          <h1>Produkt information</h1>
+          <dl class="product-description">
+            <dt>Model name</dt>
+            <dd>Model detaljer</dd>
+            <dt>Farve</dt>
+            <dd>Blue</dd>
+            <dt>Inventory number</dt>
+            <dd>ID</dd>
+          </dl>
+          <!-- <p class="product-category"></p>
+          <p class="product-brand"></p>
+          <p class="product-price"></p>
+          <p class="product-description"></p> -->
         </div>
       </div>
     </main>

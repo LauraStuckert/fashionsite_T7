@@ -19,6 +19,7 @@ function showProduct(product) {
   const kopi = template.cloneNode(true);
   //ændre indhold
   kopi.querySelector(".product-name").textContent = product.productdisplayname;
+  kopi.querySelector(".product-brand").textContent = product.brandname;
   kopi.querySelector(".product-category").textContent = product.articletype;
   //   kopi.querySelector(".product-price").textContent = product.price;
   kopi.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
