@@ -6,11 +6,11 @@ const id = URLparams.get("id");
 // const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
 
 // Dynamisk:
-function getProduct() {
-  fetch("https://kea-alt-del.dk/t7/api/products/" + id)
-    .then((res) => res.json())
-    .then((data) => showProduct(data));
-}
+fetch("https://kea-alt-del.dk/t7/api/products/" + id)
+  .then((res) => res.json())
+  .then((data) => showProduct(data));
+
+function getProduct() {}
 
 // Vi har brug for at gøre noget med dataen
 
@@ -28,7 +28,7 @@ function showProduct(product) {
   document.querySelector(".product-description dd:nth-of-type(2)").textContent = product.basecolor;
   document.querySelector(".product-description dd:nth-of-type(3)").textContent = product.ID;
 
-  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${id}.webp`;
+  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   document.querySelector("img").alt = product.productdisplayname;
 }
 
