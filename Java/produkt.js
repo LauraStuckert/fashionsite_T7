@@ -1,31 +1,32 @@
+// Hent ID fra URL
 const URLparams = new URLSearchParams(window.location.search);
 const id = URLparams.get("id");
+
+// API-URL med det valgte produkt-ID
 const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
 
-// https://kea-alt-del.dk/t7/api/products/1525
+document.addEventListener("DOMContentLoaded", () => {
+  // Dynamisk:
+  function getProduct() {
+    fetch(url)
+      .then((res) => res.json())
+      .then(showProduct);
+  }
 
-// fetch("https://kea-alt-del.dk/t7/api/products/1525")
-//   .then((response) => response.json())
-//   .then((data) => showProduct(data));
+  // Vi har brug for at gøre noget med dataen
 
-// Dynamisk:
-function getProduct() {
-  fetch(url)
-    .then((res) => res.json())
-    .then(showProduct);
-}
+  function showProduct(product) {
+    console.log(product);
+    document.querySelector(".product-container h1").textContent = product.productdisplayname;
+    document.querySelector(".product-category").textContent = product.category;
+    document.querySelector(".product-brand").textContent = product.brandname;
+    document.querySelector(".product-price").textContent = product.price;
+    document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+    document.querySelector("img").alt = product.productdisplayname;
+  }
 
-// Vi har brug for at gøre noget med dataen
-
-function showProduct(product) {
-  console.log(product);
-  document.querySelector(".product-details h1").textContent = product.productdisplayname;
-  document.querySelector(".product-details .product-category").textContent = product.category;
-  document.querySelector(".product-details .product-brand").textContent = product.brandname;
-  document.querySelector(".product-details .product-price").textContent = product.price;
-  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
-  document.querySelector("img").alt = product.productdisplayname;
-}
+  getProduct();
+});
 
 /* {
   "id": 1525,
