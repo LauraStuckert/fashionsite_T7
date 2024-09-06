@@ -1,6 +1,7 @@
 // Hent ID fra URL
 const URLparams = new URLSearchParams(window.location.search);
 const id = URLparams.get("id");
+console.log(id);
 
 // API-URL med det valgte produkt-ID
 // const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
@@ -10,7 +11,7 @@ fetch("https://kea-alt-del.dk/t7/api/products/" + id)
   .then((res) => res.json())
   .then((data) => showProduct(data));
 
-function getProduct() {}
+// function getProduct() {}
 
 // Vi har brug for at gøre noget med dataen
 
@@ -18,21 +19,23 @@ function showProduct(product) {
   console.log(product);
 
   // Purchase box
-  kopi.querySelector(".product-name").textContent = product.productdisplayname;
-  kopi.querySelector(".product-brand").textContent = product.brandname;
+  document.querySelector(".product-name").textContent = product.productdisplayname;
+  document.querySelector(".product-brand").textContent = product.brandname;
   document.querySelector(".product-category").textContent = product.category;
   document.querySelector(".product-price").textContent = product.price;
 
   // Produkt information
-  document.querySelector(".product-description dd:nth-of-type(1)").textContent = product.variantname;
-  document.querySelector(".product-description dd:nth-of-type(2)").textContent = product.basecolor;
-  document.querySelector(".product-description dd:nth-of-type(3)").textContent = product.ID;
+  document.querySelector(".model-name").textContent = product.variantname;
+  document.querySelector(".colour-name").textContent = product.basecolour;
+  document.querySelector(".inventory-number").textContent = product.id;
+  document.querySelector(".gender-name").textContent = product.gender;
+  document.querySelector(".season-name").textContent = product.season;
 
   document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   document.querySelector("img").alt = product.productdisplayname;
 }
 
-getProduct();
+// getProduct();
 
 /* {
   "id": 1525,

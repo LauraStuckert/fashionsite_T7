@@ -1,10 +1,21 @@
+window.addEventListener("DOMContentLoaded", hentData);
+
 const URLparams = new URLSearchParams(window.location.search);
 const category = URLparams.get("category");
+const container = document.querySelector("#product-list");
 
-fetch("https://kea-alt-del.dk/t7/api/products?category=" + category)
-  .then((res) => res.json())
-  //.then(data=>showProducts(data)) => dette er en anden måde at skrive nedenstående kode på
-  .then(showProducts);
+// if (params.has("category")) {
+//   url = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+// } else {
+//   url = `https://kea-alt-del.dk/t7/api/products/`;
+// }
+
+function hentData() {
+  fetch("https://kea-alt-del.dk/t7/api/products?category=" + category)
+    .then((res) => res.json())
+    //.then(data=>showProducts(data)) => dette er en anden måde at skrive nedenstående kode på
+    .then(showProducts);
+}
 
 function showProducts(products) {
   //looper igennem og kalder showPoduct (ental)
@@ -28,7 +39,7 @@ function showProduct(product) {
   kopi.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
   kopi.querySelector("img").alt = product.productdisplayname;
   // kopi.querySelector("a").href = `produktside1.html?id=${product.id}`;
-
+  kopi.querySelector(".product-link").setAttribute("href", `produktside1.html?id=${product.id}`);
   if (product.soldout) {
     // produktet er udsolgt
     kopi.querySelector("article").classList.add("udsolgt");
@@ -52,7 +63,8 @@ function showProduct(product) {
     kopi.querySelector(".rabat").classList.add("hide");
   }
 
-  kopi.querySelector(".product-link").setAttribute("href", `produktside1.html?=${product.id}`);
+  // kopi.querySelector(".product-link").setAttribute("href", `produktside1.html?id=${product.id}`);
   //appende (tilføje produkterne til main)
   document.querySelector("#product-list").appendChild(kopi);
+  container.appendChild(kopi);
 }
